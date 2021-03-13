@@ -1,2 +1,13 @@
-# cmp
-console media player - a console wrapper for pyglet control, meant for simple and quick media management on a keyboard focused linux system
+ ██████╗███╗   ███╗██████╗                                                                                                                                 
+██╔════╝████╗ ████║██╔══██╗                                                                                                                                
+██║     ██╔████╔██║██████╔╝                                                                                                                                
+██║     ██║╚██╔╝██║██╔═══╝                                                                                                                                 
+╚██████╗██║ ╚═╝ ██║██║                                                                                                                                     
+ ╚═════╝╚═╝     ╚═╝╚═╝         
+
+# console media player
+designed for simple and convenient media playback on a keyboard focused linux system
+
+# dependencies
+pip install pyglet
+pip install pynput
