@@ -38,13 +38,23 @@ def playVideo(vidpath):
         elif symbol == key.LEFT:
             seek(player, -15)
         elif symbol == key.RIGHT:
-            seek(player, -15)
+            seek(player, 15)
         elif symbol == key.UP:
             volumeAdjust(player, 0.1)
         elif symbol == key.DOWN:
             volumeAdjust(player, -0.1)
 
     pyglet.app.run()
+
+def playlist():
+    vidpath = (input("Please specify path to video file (d when done): "))
+    vidpaths = []
+    while vidpath != "d" and vidpath != "done":
+        vidpaths.append(vidpath)
+        vidpath = (input("Please specify path to video file (d when done): "))
+
+    for vid in vidpaths:
+        playVideo(vid)
 
 
 def playPause(player):
@@ -56,7 +66,7 @@ def playPause(player):
 
 def seek(player, amount):
     to = player.time + amount
-    if to >= 0:
+    if to >= 0.01:
         player.seek(to)
     else:
         player.seek(0.01)
@@ -70,6 +80,7 @@ def volumeAdjust(player, amount):
 def showHelp():
     print("\"h\" - show help")
     print("\"p\" - play video")
+    print("\"pl\" - create and play playlist")
     print("\"q\" - quit")
 
 
@@ -87,6 +98,8 @@ while True:
     command = input("Enter command (h for help): ")
     if command.lower() == "p":
         playVideoLoop()
+    elif command.lower() == "pl":
+        playlist()
     elif command.lower() == "h":
         showHelp()
     elif command.lower() == "q":
